@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+./LED/off_LED.sh
+
 while :
 do
   echo "Recording... Press Button to Stop."
@@ -14,8 +16,10 @@ do
   rm result.txt
 
   ANSWER=$(python query.py $QUESTION)
+
   killall loading_LED.sh
   ./LED/off_LED.sh
+
   echo "Robot: " $ANSWER
 
   ./text2speech.sh $ANSWER

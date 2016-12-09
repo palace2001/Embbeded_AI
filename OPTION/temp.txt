@@ -1,0 +1,1 @@
+The temperature in this room : 24°C
