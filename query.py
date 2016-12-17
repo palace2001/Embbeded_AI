@@ -23,13 +23,11 @@ elif "music" in query:
         if "on" in query :
                 randomfile = random.choice(os.listdir("/home/pi/Desktop/project/OPTION/music"))
                 m = ' /home/pi/Desktop/project/OPTION/music/' + randomfile
-                os.system('mplayer' + m + ' < /dev/null &')
+                os.system('mplayer' + m + ' </dev/null >/dev/null 2>&1 &')
                 print "Music On"
         elif "off" in query :
                 os.system('killall -9 mplayer')
                 print "Music Off"
-elif "music" in query && "off" in query :
-        print "Music Off"
 else:
         res = client.query(query)
         if res['@success'] == "true":
